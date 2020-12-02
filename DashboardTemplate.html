@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include('StyleSheet'); ?>
+  </head>
+<body>
+<h1>Project Management Tools</h1>
+<div class="form_holder">
+<!-- Note: label names must match names of html files in this project. -->
+<label class="rb_container" name="CustomProjectScratch">Create custom project from scratch
+<input type="radio" checked="checked" name="radio">
+<span class="checkmark"></span>
+</label>
+<label class="rb_container" name="CustomProjectPrepop">Create custom project from Hubspot/Formsite
+<input type="radio" name="radio">
+<span class="checkmark"></span>
+</label>
+<label class="rb_container" name="CustomProjectPrevious">Create follow-on project
+<input type="radio" name="radio">
+<span class="checkmark"></span>
+</label>
+<label class="rb_container" name="CreateStandardProject">Create standard project
+<input type="radio" name="radio">
+<span class="checkmark"></span>
+</label>
+<label class="rb_container" name="ProjectFinder">Find existing project
+<input type="radio" name="radio">
+<span class="checkmark"></span>
+</label>
+<label class="rb_container" name="IssueRma">Issue RMA
+<input type="radio" name="radio">
+<span class="checkmark"></span>
+</label>
+<!--label class="rb_container" name="RmaReceive">Receive RMA
+<input type="radio" name="radio">
+<span class="checkmark"></span>
+</label-->
+</div>
+<div><button class="submit" onclick="proceedClicked()">Proceed</button></div>
+<div id="result"></div>
+
+<script>
+function proceedClicked()
+{
+  var rbContainers = document.getElementsByClassName("rb_container");
+  var result = "";
+  for (const label of rbContainers)
+  {
+    let childInputs = label.getElementsByTagName("INPUT");
+    if (childInputs === null)
+      continue;
+    if (childInputs[0].checked)
+      result += label.getAttribute("name");
+  }
+  var url = <?= getScriptUrl() ?>;
+  url += "?page=" + result;
+  document.getElementById("result").innerHTML = url;  
+  window.open(url,'_top');
+}
+
+</script>
+</body>
+</html>
+

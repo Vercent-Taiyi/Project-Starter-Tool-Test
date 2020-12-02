@@ -1,0 +1,155 @@
+<style>
+
+body {
+    font-family:Helvetica, Arial;
+    text-align:center;
+    background-image:url(data:image/png;base64,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);
+    background-size:10%;
+    background-repeat:no-repeat;
+    }
+    
+.disabledText {color:lightgrey}
+
+div#links {margin-bottom:1.5em}
+
+div#email_choice {display:none}
+
+.left_half {
+  width:49%;
+  float:left;
+  }
+
+.right_half {
+  width:49%;
+  float:right;
+  }
+
+/* Radio-button rb_container */
+.rb_container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.rb_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.rb_container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a background */
+.rb_container input:checked ~ .checkmark {
+  background-color: rgb(247,143,30);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.rb_container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.rb_container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+.form_holder {
+  background-color: rgba(15, 64, 87, 0.15);
+  border-radius: 1em;
+  padding: 2em;
+  display:inline-block;
+  width:35em;
+  text-align:left;
+  }
+  
+div#links
+{
+    width: 100%;
+    margin-top:1em;
+}
+
+input[type=submit], button.submit
+{
+  background-color: white; 
+  color: black; 
+  border: 0.125em solid rgb(247,143,30);
+  border-radius:0.25em;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: larger;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin:0.5em;
+}
+
+input[type=submit]:hover, button.submit:hover {
+  background-color: rgb(247,143,30);
+  color: white;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 1em 1em;
+    margin: 0.5em 0 2em;
+    display: inline-block;
+    border: 0.1em solid silver;
+    border-radius: 0.25em;
+    box-sizing: border-box;
+}
+
+/* From RMA */
+#overlay {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity:0.5
+}
+
+
+div.submit_holder {text-align:center; clear:both}
+    
+#results {
+  border: thin solid rgb(247,143,30);
+  min-height: 2em
+  }
+</style>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <input type="text" id="tech_support_link" name="tech_support_link" placeholder="Paste Asana link here" onchange="readTechSupportTask()">
+    <div id="results">
+  
+  </div>
+      <script>
+ 
+  function populateTechSupportTask(taskId)
+  {
+    if (typeof taskId === 'undefined')
+      return;
+      
+    var techSupportInput = document.getElementById("tech_support_link");
+    techSupportInput.value = taskId;
+    // The onchange event is not triggered when the change comes from
+    // script itself, so explicitly call the onchange handler here.
+    readTechSupportTask();
+  }
+
+  function loadingComplete()
+  {
+    document.getElementById("results").innerHTML = "Loaded!";
+<? if ("techSupportTask" in httpGetParams){ ?>
+         populateTechSupportTask(<?= httpGetParams.techSupportTask ?>);
+    <? } ?>
+
+  }
+  
+  window.addEventListener('load', loadingComplete);
+  
+  function readTechSupportTask()
+  {
+  var techSupportInput = document.getElementById("tech_support_link");
+    document.getElementById("results").innerHTML += techSupportInput.value;
+    }
+</script>
+  </body>
+</html>
+
+

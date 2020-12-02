@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include('StyleSheet'); ?>
+  </head>
+  <body>
+    <h3>Custom Project</h3>
+    <div class="form_holder">
+      <label>Customer (Company)
+        <input type="text" id="customer_name" name="customer_name" placeholder="Omit 'Inc', Ltd' etc." />
+      </label>
+    
+      <label>Distributor (Company)
+        <input type="text" id="distributor_name" name="distributor_name">
+      </label>
+    
+      <label>Project Name
+        <input type="text" id="project_name" name="project_name">
+      </label>
+    
+      <label>Customer Contact Name
+        <input type="text" id="customer_contact" name="customer_contact" placeholder="John Doe" />
+      </label>
+    
+      <label>Customer Email
+        <input type="text" id="customer_email" name="customer_email" placeholder="john.doe@example.com" />
+      </label>
+    
+      <label>Sensor Type
+        <select id="sensor_type" name="sensor_type">
+          <option value="cta">Conformable</option>
+          <option value="sta">Stretchable</option>
+          <option value="ita">Industrial</option>
+          <option value="hta">Hybrid</option>      
+        </select>
+      </label>
+      <div class="submit_holder">
+        <input type="submit" value="Submit" />
+      </div>
+    </div>
+    <div><button class="button button1" onclick="createClicked()">Create</button></div>
+    <div id="result"></div>
+    
+    <script>
+function proceedClicked()
+{
+  var formHolders = document.getElementsByClassName("form_holder");
+  var labels = formHolders[0].getElementsByTagName("LABEL");
+  var result = "";
+  for (const label of labels)
+  {
+    let childInputs = label.getElementsByTagName("INPUT");
+    if (childInputs === null)
+      continue;
+    if (childInputs[0].type == "text")
+      result += label.getAttribute("name") + childInputs[0].value;
+  }
+  
+  //var elements = document.querySelectorAll("#my-form input[type=text]")
+
+//for (var i = 0, element; element = elements[i++];) {
+  //  if (element.value === "")
+    //    console.log("it's an empty textfield")
+//}
+  var url = <?= getScriptUrl() ?>;
+  url += "?page=" + result;
+  document.getElementById("result").innerHTML = url;  
+  //window.open(url,'_top');
+}
+
+function createClicked()
+{
+  var dict = {};
+  var inputs = document.querySelectorAll(".form_holder input[type=text],select")
+
+  for (const inputElement of inputs)
+  {
+    dict[inputElement.id] = inputElement.value;
+  }
+  //var url = <?= getScriptUrl() ?>;
+  //url += "?page=" + result;
+  document.getElementById("result").innerHTML = JSON.stringify(dict); //url;  
+  //window.open(url,'_top');
+}
+
+</script>
+
+  </body>
+</html>
+
+
+
