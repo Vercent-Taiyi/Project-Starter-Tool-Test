@@ -12,6 +12,8 @@
  *          sub-ordinate page.
  * @returns Text (HTML) to be served.
  */
+
+ //change this to see if there are any changes available
 function doGet(e)
 {
   Logger.log("GET");
