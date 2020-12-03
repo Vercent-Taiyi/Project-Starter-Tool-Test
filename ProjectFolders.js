@@ -22,7 +22,7 @@ function isDistributor(candidate)
 function testIsDistributor()
 {
   testOneDistributor("PPS UK", true);
-  testOneDistributor("pps uk", true);
+  testOneDistributor("pps uk", true);//test
   testOneDistributor("PpSuK", true);
   testOneDistributor("pps   kr", true);
   testOneDistributor("PPSkorea", true);

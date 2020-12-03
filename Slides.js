@@ -23,7 +23,7 @@ function Slides_getCleanUrl(url)
  *
  * @return Handle of new file, or null.
  */
-function cloneFile(originalId, newName)
+function cloneFile(originalId, newName)//test
 {
   try
   {
